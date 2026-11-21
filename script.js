@@ -17,6 +17,19 @@ function toggleSaved(button){const title=titleFor(button);saved=saved.includes(t
 $$('.poster-save,.trend-save').forEach(button=>button.addEventListener('click',()=>toggleSaved(button)));
 $('#heroSave')?.addEventListener('click',e=>toggleSaved(e.currentTarget));
 $('#heroWatch')?.addEventListener('click',()=>notify('Player integration is not connected yet'));
+/* Download centre: direct downloads activate only when an authorised file URL is supplied for the title. */
+const downloadModal=$('#downloadModal');
+function openDownload(){downloadModal?.classList.add('open');downloadModal?.setAttribute('aria-hidden','false')}
+function closeDownload(){downloadModal?.classList.remove('open');downloadModal?.setAttribute('aria-hidden','true')}
+$('#heroDownload')?.addEventListener('click',openDownload);
+$('#downloadClose')?.addEventListener('click',closeDownload);
+downloadModal?.addEventListener('click',e=>{if(e.target===downloadModal)closeDownload()});
+$('#startDownload')?.addEventListener('click',()=>{
+ const url=$('#heroDownload')?.dataset.downloadUrl;
+ if(!url){notify('No authorised download source for this title yet');return}
+ const link=document.createElement('a');link.href=url;link.download='';link.rel='noopener';document.body.appendChild(link);link.click();link.remove();
+});
+
 $('#heroMore')?.addEventListener('click',()=>notify('Dune: Part Two · Sci-Fi · Drama'));
 /* Settings control centre */
 const settings=$('#settingsModal');
