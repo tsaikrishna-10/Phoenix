@@ -10,7 +10,7 @@ function notify(message){if(!toast)return;toast.textContent=message;toast.classL
 function readSaved(){try{return JSON.parse(localStorage.getItem('phoenix-watchlist')||'[]')}catch{return []}}
 let saved=readSaved();
 function persistSaved(){try{localStorage.setItem('phoenix-watchlist',JSON.stringify(saved))}catch{}updateSavedCount()}
-function updateSavedCount(){const el=$('#savedCount');if(el)el.textContent=saved.length+' title(s) in My List'}
+function updateSavedCount(){const label=saved.length+' title(s) in My List';const el=$('#savedCount');const settingsCount=$('#savedCountSettings');if(el)el.textContent=label;if(settingsCount)settingsCount.textContent=label}
 function titleFor(button){return button.dataset.title||button.closest('.poster-card,.trend-card')?.querySelector('b')?.textContent?.trim()||'Dune: Part Two'}
 function syncSavedButtons(){ $$('.poster-save,.trend-save').forEach(button=>{const title=titleFor(button);const active=saved.includes(title);button.classList.toggle('saved',active);button.textContent=active?'✓':'＋';button.setAttribute('aria-pressed',String(active))});const hero=$('#heroSave');if(hero){const active=saved.includes('Dune: Part Two');hero.classList.toggle('saved',active);hero.innerHTML=active?'✓ <span>In My List</span>':'＋ <span>My list</span>';hero.setAttribute('aria-pressed',String(active))}updateSavedCount()}
 function toggleSaved(button){const title=titleFor(button);saved=saved.includes(title)?saved.filter(x=>x!==title):[...saved,title];persistSaved();syncSavedButtons();notify(saved.includes(title)?title+' added to My List':title+' removed from My List')}
