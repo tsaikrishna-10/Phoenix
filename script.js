@@ -18,20 +18,64 @@ $$('.poster-save,.trend-save').forEach(button=>button.addEventListener('click',(
 $('#heroSave')?.addEventListener('click',e=>toggleSaved(e.currentTarget));
 $('#heroWatch')?.addEventListener('click',()=>notify('Player integration is not connected yet'));
 $('#heroMore')?.addEventListener('click',()=>notify('Dune: Part Two · Sci-Fi · Drama'));
-/* Settings */
+/* Settings control centre */
 const settings=$('#settingsModal');
-function openSettings(){if(!settings)return;settings.classList.add('open');settings.setAttribute('aria-hidden','false');$('#themeSetting').value=prefs.theme;$('#accentSetting').value=prefs.accent;$('#motionSetting').checked=prefs.reduceMotion;$('#effectsSetting').checked=prefs.lightEffects;updateSavedCount();$('#settingsClose')?.focus()}
+const settingDefaults={
+ theme:'dark',accent:'ember',compact:false,reduceMotion:false,lightEffects:true,rememberSection:true,
+ quality:'auto',dataSaver:false,autoplay:true,previews:false,skipIntro:true,
+ subtitleLanguage:'en',subtitleSize:'medium',subtitleBackground:'dark',audioLanguage:'original',rememberTracks:true,
+ newEpisodes:true,newMovies:true,reminders:false,productUpdates:false
+};
+prefs={...settingDefaults,...prefs};
+const settingFields={
+ theme:'themeSetting',accent:'accentSetting',compact:'compactSetting',reduceMotion:'motionSetting',lightEffects:'effectsSetting',rememberSection:'rememberSetting',
+ quality:'qualitySetting',dataSaver:'dataSaverSetting',autoplay:'autoplaySetting',previews:'previewSetting',skipIntro:'skipIntroSetting',
+ subtitleLanguage:'subtitleLanguageSetting',subtitleSize:'subtitleSizeSetting',subtitleBackground:'subtitleBackgroundSetting',audioLanguage:'audioLanguageSetting',rememberTracks:'rememberTracksSetting',
+ newEpisodes:'newEpisodesSetting',newMovies:'newMoviesSetting',reminders:'remindersSetting',productUpdates:'productUpdatesSetting'
+};
+function syncSettingsForm(){
+ Object.entries(settingFields).forEach(([key,id])=>{const el=$('#'+id);if(!el)return;if(el.type==='checkbox')el.checked=!!prefs[key];else el.value=prefs[key]??settingDefaults[key]});
+ updateSavedCount();
+}
+function applyPrefs(){
+ document.documentElement.dataset.theme=prefs.theme;
+ document.documentElement.dataset.accent=prefs.accent;
+ document.body.classList.toggle('reduce-motion',!!prefs.reduceMotion);
+ document.body.classList.toggle('light-effects',!!prefs.lightEffects);
+ document.body.classList.toggle('compact-content',!!prefs.compact);
+}
+function openSettings(){
+ if(!settings)return;
+ settings.classList.add('open');settings.setAttribute('aria-hidden','false');
+ syncSettingsForm();showSettingsTab('general');$('#settingsClose')?.focus();
+}
 function closeSettings(){settings?.classList.remove('open');settings?.setAttribute('aria-hidden','true');$('#settingsBtn')?.focus()}
+function showSettingsTab(name){
+ $$('[data-settings-tab]').forEach(tab=>tab.classList.toggle('active',tab.dataset.settingsTab===name));
+ $$('[data-settings-page]').forEach(page=>page.classList.toggle('active',page.dataset.settingsPage===name));
+}
+$$('[data-settings-tab]').forEach(tab=>tab.addEventListener('click',()=>showSettingsTab(tab.dataset.settingsTab)));
+Object.entries(settingFields).forEach(([key,id])=>{
+ const el=$('#'+id);if(!el)return;
+ el.addEventListener('change',()=>{
+  prefs[key]=el.type==='checkbox'?el.checked:el.value;
+  savePrefs();applyPrefs();
+  notify('Preference saved');
+ });
+});
+function resetAllPrefs(){
+ prefs={...settingDefaults};savePrefs();applyPrefs();syncSettingsForm();notify('All preferences reset');
+}
 $('#settingsBtn')?.addEventListener('click',openSettings);
 $('#settingsClose')?.addEventListener('click',closeSettings);
 $('#settingsDone')?.addEventListener('click',closeSettings);
+$('#resetSettings')?.addEventListener('click',resetAllPrefs);
+$('#resetSettingsFooter')?.addEventListener('click',resetAllPrefs);
 settings?.addEventListener('click',e=>{if(e.target===settings)closeSettings()});
-$('#themeSetting')?.addEventListener('change',e=>{prefs.theme=e.target.value;savePrefs();applyPrefs()});
-$('#accentSetting')?.addEventListener('change',e=>{prefs.accent=e.target.value;savePrefs();applyPrefs()});
-$('#motionSetting')?.addEventListener('change',e=>{prefs.reduceMotion=e.target.checked;savePrefs();applyPrefs()});
-$('#effectsSetting')?.addEventListener('change',e=>{prefs.lightEffects=e.target.checked;savePrefs();applyPrefs()});
-$('#resetSettings')?.addEventListener('click',()=>{prefs={...defaults};savePrefs();applyPrefs();openSettings();notify('Settings reset')});
-$('#clearSaved')?.addEventListener('click',()=>{if(!saved.length){notify('My List is already empty');return}saved=[];persistSaved();syncSavedButtons();notify('My List cleared')});
+$('#clearSaved')?.addEventListener('click',()=>{
+ if(!saved.length){notify('My List is already empty');return}
+ saved=[];persistSaved();syncSavedButtons();notify('My List cleared');
+});
 /* Search */
 const modal=$('#searchModal'),input=$('#searchInput');
 function openSearch(){if(!modal||!input)return;modal.classList.add('open');setTimeout(()=>input.focus(),30)}
