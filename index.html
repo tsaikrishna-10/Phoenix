@@ -69,6 +69,7 @@
    <button class="settings-tab" data-settings-tab="subtitles">▤ <span>Subtitles & Audio</span></button>
    <button class="settings-tab" data-settings-tab="notifications">♧ <span>Notifications</span></button>
    <button class="settings-tab" data-settings-tab="privacy">⌑ <span>Privacy & Data</span></button>
+   <button class="settings-tab" data-settings-tab="downloads">↓ <span>Downloads</span></button>
    <button class="settings-tab" data-settings-tab="about">ⓘ <span>About PHOENIX</span></button>
   </nav>
   <div class="settings-pages">
@@ -124,6 +125,19 @@
      <div class="setting-row"><span><b>Search history</b><small>Search is not stored by this preview</small></span><span class="setting-status">Not stored</span></div>
     </div>
     <div class="settings-group"><h3>Storage</h3><p class="settings-note">Your My List and settings are stored in this browser on this device. Clearing browser site data may remove them.</p></div>
+   </section>
+   <section class="settings-page" data-settings-page="downloads">
+    <div class="settings-group"><h3>Download preferences</h3>
+     <label class="setting-row"><span><b>Default download quality</b><small>Preferred quality when a source supports it</small></span><select id="downloadQualitySetting"><option value="2160">4K Ultra HD · 2160p</option><option value="1080">Full HD · 1080p</option><option value="720">HD · 720p</option><option value="480">SD · 480p</option></select></label>
+     <label class="setting-row"><span><b>Confirm before downloading</b><small>Review the selected quality before starting</small></span><input type="checkbox" id="confirmDownloadSetting"></label>
+     <label class="setting-row"><span><b>Download notifications</b><small>Show a message when a download starts or completes</small></span><input type="checkbox" id="downloadNotificationsSetting"></label>
+     <label class="setting-row"><span><b>Keep original file name</b><small>Use the source file name when available</small></span><input type="checkbox" id="originalFilenameSetting"></label>
+    </div>
+    <div class="settings-group"><h3>Download storage</h3>
+     <div class="setting-row"><span><b>Save location</b><small>Managed by your browser or Android download manager</small></span><span class="setting-status">Browser managed</span></div>
+     <div class="setting-row"><span><b>Download source</b><small>Direct downloadable sources are not connected yet</small></span><span class="setting-status">Pending</span></div>
+    </div>
+    <p class="settings-note">These preferences are saved on this device. Actual quality and download availability depend on the source and connected downloader.</p>
    </section>
    <section class="settings-page" data-settings-page="about">
     <div class="about-brand"><span>✦</span><div><b>PHOENIX</b><small>CINEMA, REIMAGINED</small></div></div>
