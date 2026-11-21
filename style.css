@@ -166,3 +166,48 @@ body.reduce-motion *,body.reduce-motion *:before,body.reduce-motion *:after{anim
 }
 @media(max-width:380px){.hero{height:550px}.hero h1{font-size:38px}.poster-card{flex-basis:84%}.continue-card{flex-basis:84%}}
 [hidden]{display:none!important}
+
+/* Expanded Apple TV style settings control centre */
+.settings-wide{width:min(100%,900px);padding:27px 30px 20px;border-radius:16px;background:#111214;border:1px solid #333438}
+.settings-head{align-items:flex-start;margin-bottom:22px}
+.settings-head h2{font-size:30px;letter-spacing:-.04em}
+.settings-head p{margin:7px 0 0;color:#929299;font-size:12px}
+.settings-layout{display:grid;grid-template-columns:190px minmax(0,1fr);gap:26px;min-height:390px}
+.settings-nav{display:flex;flex-direction:column;gap:5px;border-right:1px solid #292a2e;padding-right:18px}
+.settings-tab{display:flex;align-items:center;gap:11px;text-align:left;padding:12px 11px;border-radius:7px;color:#a3a3a9;font-size:13px}
+.settings-tab.active{background:#292a2e;color:#fff}
+.settings-tab span{font-size:12px}
+.settings-pages{min-width:0}
+.settings-page{display:none}
+.settings-page.active{display:block}
+.settings-page .settings-group:first-child{border-top:0;padding-top:0}
+.settings-group h3{font-size:10px;letter-spacing:.15em}
+.setting-row{min-height:54px}
+.setting-row b{font-size:12px}
+.setting-row small{font-size:10px;line-height:1.45}
+.setting-row select{min-width:150px;max-width:190px;padding:9px 10px;background:#202125;border-color:#3a3b40;border-radius:6px;color:#eee;font-size:11px}
+.setting-row input[type=checkbox]{width:18px;height:18px;accent-color:#d6b27a;cursor:pointer}
+.setting-status{font-size:10px;color:#b7b7bd;white-space:nowrap}
+.settings-note{font-size:10px;line-height:1.6;color:#8e8e95;background:#191a1e;padding:11px 12px;border-radius:6px;margin:13px 0}
+.settings-footer{border-top:1px solid #2b2c30;margin-top:17px;padding-top:16px}
+.about-brand{display:flex;align-items:center;gap:13px;padding:15px 0 22px}
+.about-brand>span{font-size:32px;color:#d6b27a}
+.about-brand div{display:grid;gap:4px}
+.about-brand b{font-size:16px;letter-spacing:.16em}
+.about-brand small{font-size:8px;letter-spacing:.16em;color:#9b9ba1}
+body.compact-content .poster-row{gap:9px}
+body.compact-content .content-section{padding-top:24px}
+@media(max-width:680px){
+ .settings-wide{width:100%;padding:19px 17px 15px;max-height:90vh;overflow:auto;border-radius:13px}
+ .settings-head{margin-bottom:16px}
+ .settings-head h2{font-size:25px}
+ .settings-layout{display:flex;flex-direction:column;gap:14px;min-height:0}
+ .settings-nav{flex-direction:row;overflow-x:auto;border-right:0;border-bottom:1px solid #292a2e;padding:0 0 9px;gap:5px;scrollbar-width:none}
+ .settings-nav::-webkit-scrollbar{display:none}
+ .settings-tab{flex:0 0 auto;gap:7px;padding:10px;border:1px solid #292a2e;font-size:12px}
+ .settings-tab span{font-size:11px}
+ .settings-pages{min-height:290px}
+ .setting-row{gap:9px}
+ .setting-row select{min-width:125px;max-width:145px;padding:8px 6px;font-size:10px}
+ .settings-footer{position:sticky;bottom:-15px;background:#111214;padding:13px 0 4px}
+}
