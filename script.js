@@ -21,10 +21,19 @@ $('#heroWatch')?.addEventListener('click',()=>notify('Player integration is not 
 const downloadModal=$('#downloadModal');
 function openDownload(){downloadModal?.classList.add('open');downloadModal?.setAttribute('aria-hidden','false')}
 function closeDownload(){downloadModal?.classList.remove('open');downloadModal?.setAttribute('aria-hidden','true')}
-$('#heroDownload')?.addEventListener('click',openDownload);
+$('#heroDownload')?.addEventListener('click',()=>{
+ const q=$('#downloadQuality');
+ if(q)q.value=prefs.downloadQuality||'1080';
+ openDownload();
+});
+$('#downloadQuality')?.addEventListener('change',e=>{
+ prefs.downloadQuality=e.target.value;savePrefs();
+ const setting=$('#downloadQualitySetting');if(setting)setting.value=e.target.value;
+});
 $('#downloadClose')?.addEventListener('click',closeDownload);
 downloadModal?.addEventListener('click',e=>{if(e.target===downloadModal)closeDownload()});
 $('#startDownload')?.addEventListener('click',()=>{
+ if(prefs.confirmDownload&&!window.confirm('Start this download with the selected quality?'))return;
  const url=$('#heroDownload')?.dataset.downloadUrl;
  if(!url){notify('No authorised download source for this title yet');return}
  const link=document.createElement('a');link.href=url;link.download='';link.rel='noopener';document.body.appendChild(link);link.click();link.remove();
@@ -36,6 +45,7 @@ const settings=$('#settingsModal');
 const settingDefaults={
  theme:'dark',accent:'ember',compact:false,reduceMotion:false,lightEffects:true,rememberSection:true,
  quality:'auto',dataSaver:false,autoplay:true,previews:false,skipIntro:true,
+ downloadQuality:'1080',confirmDownload:true,downloadNotifications:true,originalFilename:true,
  subtitleLanguage:'en',subtitleSize:'medium',subtitleBackground:'dark',audioLanguage:'original',rememberTracks:true,
  newEpisodes:true,newMovies:true,reminders:false,productUpdates:false
 };
@@ -43,6 +53,7 @@ prefs={...settingDefaults,...prefs};
 const settingFields={
  theme:'themeSetting',accent:'accentSetting',compact:'compactSetting',reduceMotion:'motionSetting',lightEffects:'effectsSetting',rememberSection:'rememberSetting',
  quality:'qualitySetting',dataSaver:'dataSaverSetting',autoplay:'autoplaySetting',previews:'previewSetting',skipIntro:'skipIntroSetting',
+ downloadQuality:'downloadQualitySetting',confirmDownload:'confirmDownloadSetting',downloadNotifications:'downloadNotificationsSetting',originalFilename:'originalFilenameSetting',
  subtitleLanguage:'subtitleLanguageSetting',subtitleSize:'subtitleSizeSetting',subtitleBackground:'subtitleBackgroundSetting',audioLanguage:'audioLanguageSetting',rememberTracks:'rememberTracksSetting',
  newEpisodes:'newEpisodesSetting',newMovies:'newMoviesSetting',reminders:'remindersSetting',productUpdates:'productUpdatesSetting'
 };
