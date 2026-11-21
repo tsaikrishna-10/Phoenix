@@ -33,3 +33,108 @@ body.reduce-motion *,body.reduce-motion *:before,body.reduce-motion *:after{anim
 body.light-effects .glass{backdrop-filter:none!important;-webkit-backdrop-filter:none!important;box-shadow:0 5px 16px #0003!important}
 body.light-effects .ambient{display:none!important}
 @media(max-width:720px){.settings-panel{padding:19px}.settings-backdrop{align-items:flex-end;padding:9px}.settings-panel{max-height:85vh;border-radius:20px}}
+
+/* PHOENIX — Max x Apple TV direction: solid surfaces, zero glass */
+:root{
+ --bg:#08090b;--panel:#111317;--line:#292d33;--line-hot:#9c7141;
+ --gold:#d8ad70;--ember:#bd4b32;--text:#f4f2ee;--muted:#969ba3;
+}
+html{scroll-behavior:auto;scroll-padding-top:82px}
+body{background:#08090b;color:var(--text)}
+.ambient{display:none!important}
+.glass,.main-panel,.topbar,.side-card,.hero,.rail,.settings-panel{
+ backdrop-filter:none!important;-webkit-backdrop-filter:none!important;
+ box-shadow:none!important;
+}
+.glass{background:#111317!important;border:1px solid #292d33}
+.app-shell{max-width:1680px;margin:0 auto;padding:18px 22px;grid-template-columns:58px minmax(0,1fr);gap:14px}
+.rail{border-radius:18px;background:#111317!important;border:1px solid #292d33;top:18px;height:calc(100vh - 36px)}
+.rail-brand{border-radius:12px;background:#d8ad70;box-shadow:none}
+.rail-link{border-radius:11px}
+.rail-link:hover,.rail-link.active{background:#24272d;box-shadow:none;color:#f4f2ee}
+.main-panel{background:#0c0e11;border:1px solid #24272c;border-radius:20px;overflow:hidden}
+.topbar{height:70px;background:#101216!important;border-bottom:1px solid #292d33;padding:0 26px}
+.wordmark{letter-spacing:.16em;font-size:16px}
+.wordmark-icon{color:var(--gold);text-shadow:none}
+.top-nav a{font-size:12px;color:#a6aab1}
+.top-nav a.active:after{background:var(--gold)}
+.search-pill{border-radius:9px;background:#191c21;border-color:#30343b}
+.avatar{border-radius:10px;background:#d8ad70;color:#17120b;border:0}
+.content-grid{grid-template-columns:235px minmax(0,1fr);gap:20px;padding:22px}
+.side-card{border-radius:13px;background:#12151a!important;border-color:#292d33}
+.episode{border-radius:9px}
+.play-small{border-radius:8px;background:#e9e5dc}
+.hero{border-radius:13px;border:1px solid #303239;background:#15171b}
+.hero-image{filter:none}
+.hero-vignette{background:linear-gradient(90deg,#090a0df0 0%,#090a0db5 42%,#090a0d12 100%),linear-gradient(0deg,#090a0de8 0%,transparent 68%)}
+.hero-content{left:34px;bottom:34px}
+.eyebrow{color:#e2bd88}
+.eyebrow i{box-shadow:none}
+.genre-pills span{border-radius:5px;background:#11151ac9;border-color:#ffffff30}
+.hero h1{font-size:clamp(36px,4.4vw,58px);letter-spacing:-.045em}
+.hero h1 em,.section-head h2 em{color:#e0b879}
+.btn{border-radius:7px;height:42px}
+.btn-light{background:#f1eee7;color:#111}
+.btn-outline,.round-btn{background:#14171c;border:1px solid #555b63}
+.round-btn{border-radius:7px}
+.hero-pagination button{border-radius:7px;background:#171a20}
+.recommend-section,.trending-section{padding-top:30px}
+.section-head{margin-bottom:17px}
+.section-head h2{font-size:23px}
+.poster-row{gap:14px}
+.poster{border-radius:9px;border:1px solid #292d33;box-shadow:none}
+.poster:hover{transform:none;border-color:#8d704d}
+.poster-label{border-radius:4px;background:#101216;border-color:#464a50}
+.poster-save{border-radius:6px;background:#101216;border-color:#454a52}
+.trend-card{border-radius:8px;background:#12151a;border-color:#292d33}
+.trend-card>span{color:#d8ad70}
+.trend-card strong{color:#e0b879}
+.trend-save{color:#d8ad70}
+footer{border-color:#292d33}
+.search-modal{background:#08090bf7!important;backdrop-filter:none!important}
+.search-modal input{border-bottom-color:#555b63}
+.toast{border-radius:7px;background:#d8ad70;box-shadow:none}
+.settings-backdrop{background:#050607e8}
+.settings-panel{background:#12151a;border-color:#30343b;border-radius:14px}
+.settings-done{border-radius:7px;background:#d8ad70}
+.setting-row select{border-radius:6px;background:#1b1f25}
+:root[data-theme="dim"]{--bg:#111317;--panel:#191c21}
+@media(max-width:1050px){
+ .app-shell{padding:12px;grid-template-columns:48px minmax(0,1fr);gap:10px}
+ .content-grid{grid-template-columns:190px minmax(0,1fr);padding:14px;gap:13px}
+ .topbar{padding:0 16px}
+}
+@media(max-width:720px){
+ .app-shell{padding:0;display:block}
+ .main-panel{border:0;border-radius:0;background:#08090b;min-height:100vh}
+ .topbar{height:62px;padding:0 15px;position:sticky;top:0;z-index:12;background:#101216!important;border-bottom:1px solid #292d33}
+ .wordmark{font-size:14px;letter-spacing:.13em}
+ .search-pill{width:38px;height:36px;padding:0;justify-content:center;font-size:0;border-radius:8px}
+ .search-pill span{font-size:20px}
+ .avatar{width:32px;height:32px}
+ .content-grid{padding:12px;gap:18px}
+ .hero{height:410px;min-height:0;border-radius:10px}
+ .hero-image{background-position:58% center}
+ .hero-vignette{background:linear-gradient(0deg,#08090bf5 0%,#08090b9c 48%,#08090b1c 100%)}
+ .hero-content{left:18px;right:16px;bottom:22px}
+ .hero h1{font-size:38px}
+ .hero-content>p{font-size:11px;line-height:1.6}
+ .hero-pagination{top:13px;right:13px}
+ .hero-pagination button{width:27px;height:27px}
+ .side-card{border-radius:10px}
+ .recommend-section{padding-top:3px}
+ .section-head h2{font-size:20px}
+ .poster-row{gap:10px}
+ .poster{height:235px;border-radius:8px}
+ .poster-bottom{left:10px;bottom:10px}
+ .trend-grid{gap:8px}
+ .trend-card{border-radius:8px;padding:10px;grid-template-columns:20px 48px minmax(0,1fr) 36px 18px}
+ .rail{position:fixed;z-index:30;left:50%;bottom:10px;top:auto;transform:translateX(-50%);height:56px;min-height:0;max-height:none;width:min(94%,390px);border-radius:12px;flex-direction:row;justify-content:space-around;padding:5px 8px;gap:2px;background:#14171c!important;border:1px solid #353a42}
+ .rail-brand{width:34px;height:34px;margin:0;border-radius:9px}
+ .rail-link{width:36px;height:36px;border-radius:9px;font-size:18px}
+ .rail-bottom{display:contents}
+ footer{padding:15px 16px 86px}
+ .settings-backdrop{padding:8px;align-items:flex-end}
+ .settings-panel{max-height:86vh;border-radius:13px}
+}
+@media(max-width:390px){.hero{height:385px}.hero h1{font-size:34px}.poster{height:210px}}
