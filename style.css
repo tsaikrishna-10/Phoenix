@@ -217,3 +217,128 @@ body.compact-content .content-section{padding-top:24px}
 
 /* TMDB search results */
 .tmdb-search-results{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:18px;max-height:48vh;overflow:auto}.tmdb-result{display:flex;align-items:center;gap:10px;min-width:0;text-align:left;padding:8px;background:#111214;border:1px solid #292a2e;border-radius:7px}.tmdb-result img{width:42px;height:58px;object-fit:cover;border-radius:4px;background:#25262a}.tmdb-result-copy{display:grid;gap:5px;min-width:0}.tmdb-result-copy b{font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.tmdb-result-copy small{font-size:9px;color:#a1a1a6}.tmdb-result:hover{border-color:#d6b27a}@media(max-width:680px){.tmdb-search-results{grid-template-columns:1fr}}
+
+
+/* PHOENIX — SonicWave-inspired neon cinema refresh */
+:root{
+ --bg:#050307;--surface:#100b16;--line:#292033;--text:#f7f3fb;--muted:#aaa0b4;
+ --gold:#e83d9b;--red:#a72cff;--accent:#e83d9b;
+}
+html{scroll-behavior:smooth}
+body{background:#050307;color:var(--text)}
+.topbar{
+ background:#050307;border-bottom:1px solid #211629;
+ box-shadow:0 8px 28px #0008;
+}
+.wordmark{letter-spacing:.12em}
+.wordmark-icon{color:#ed3caa;text-shadow:0 0 16px #e83d9b88}
+.top-nav a.active,.top-nav a:hover{color:#f34bb1}
+.search-pill,.avatar,.settings-icon{border-color:#35223e;background:#100b16}
+.hero{
+ min-height:590px;height:min(76vw,690px);max-height:690px;
+ background:#09040d;isolation:isolate;overflow:hidden;
+}
+.hero-image{
+ background-position:center 34%;
+ filter:saturate(1.18) contrast(1.04);
+ transform:scale(1.015);
+}
+.hero-vignette{
+ background:
+  linear-gradient(0deg,#050307 0%,#050307e8 12%,#05030770 47%,#05030718 100%),
+  linear-gradient(90deg,#050307c9 0%,#0503077a 43%,transparent 82%);
+}
+.hero:after{
+ content:"";position:absolute;z-index:1;pointer-events:none;left:-7%;right:-7%;bottom:-4px;height:38%;
+ opacity:.55;
+ background:
+  radial-gradient(ellipse at 14% 60%,#e52d9b38 0,transparent 42%),
+  radial-gradient(ellipse at 88% 40%,#822cff38 0,transparent 45%);
+ border-top:1px solid #d32c9a38;
+}
+.hero-content{z-index:2}
+.hero-brandline{color:#f34bad;letter-spacing:.25em}
+.phoenix-mini{color:#b83cff}
+.genre-pills span{border-color:#63345f;background:#140b1c;color:#f1c6e4}
+.hero h1{font-size:clamp(46px,7vw,82px);letter-spacing:-.065em;line-height:.98}
+.hero h1 em{
+ font-style:normal;background:linear-gradient(100deg,#ff3c9e,#c12dff 82%);
+ -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero-content>p{color:#d1c6d7;max-width:490px}
+.btn-light,.download-start{
+ background:linear-gradient(105deg,#f12e91,#8e22ed);color:white;
+ border:0;box-shadow:0 8px 28px #c22c9b35;
+}
+.btn-outline{background:#09060dbb;border:1px solid #55345f;color:#f5eaf7}
+.round-btn{border:1px solid #59365e;background:#100a16}
+.hero-pagination .current{color:#f04ba9}
+.page-content{max-width:1440px;margin:0 auto;padding-left:clamp(18px,4vw,64px);padding-right:clamp(18px,4vw,64px)}
+.content-section{padding-top:40px}
+.section-head{align-items:end}
+.section-head small{color:#e94ca9;letter-spacing:.2em}
+.section-head h2{letter-spacing:-.045em}
+.section-head>a{color:#ef5cb4}
+.poster-row{gap:16px}
+.poster-card{min-width:0}
+.poster{
+ aspect-ratio:2/3;border-radius:12px;border:1px solid #33223d;
+ background-color:#120a19;box-shadow:0 12px 28px #0007;
+ transition:transform .2s ease,border-color .2s ease;
+}
+.poster-card:hover .poster{transform:translateY(-4px);border-color:#b53b9d}
+.poster:after{background:linear-gradient(0deg,#050307f2 0%,#05030775 34%,transparent 70%)}
+.poster-label{background:#13091d;border:1px solid #67335f;color:#ff9bd3}
+.poster-bottom b{font-size:15px}
+.poster-bottom small{color:#e6a3d0}
+.continue-card{background:#100b16;border:1px solid #2b1e34;border-radius:10px;overflow:hidden}
+.continue-copy i{background:#33243a}
+.continue-copy i em{background:linear-gradient(90deg,#ef329a,#9c2cf1)}
+.filters button{border:1px solid #35233e;background:#100b16;color:#c9b9cf}
+.filters button.active{background:linear-gradient(100deg,#e93499,#8e2be9);border-color:transparent;color:white}
+.trend-card{background:#100b16;border:1px solid #2b1e34;border-radius:10px}
+.trend-card>span,.trend-card strong{color:#ed55b2}
+.trend-thumb{border-radius:7px}
+.trend-save,.poster-save{background:#170d20;border:1px solid #57305b;color:#f45db8}
+.trend-save.saved,.poster-save.saved{background:#e33c9b;color:white}
+.list-note{color:#aaa0b4}
+footer{border-top:1px solid #24172d;background:#07040a}
+footer .wordmark-icon{color:#ed3caa}
+.search-modal,.settings-panel,.download-panel{
+ background:#100b16;border-color:#382641;box-shadow:0 22px 70px #000b;
+}
+.search-modal input,.setting-row select,.download-panel select{
+ background:#09060d;border-color:#49304f;color:#f8f0fa;
+}
+.settings-tab.active{background:#29152e;color:#ff82c8}
+.settings-nav{border-color:#33213c}
+.settings-group{border-color:#33213c}
+.settings-note{background:#170e20}
+.setting-status{color:#d6a8cc}
+.settings-close,.download-close,.modal-close{color:#f4b2dc}
+#toast{border:1px solid #71366d;background:#170d20;color:#fff}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{
+ outline:2px solid #f04eae;outline-offset:3px;
+}
+@media(min-width:900px){
+ .poster-row{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));}
+ .poster-card{width:100%}
+ .compact-row{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media(max-width:680px){
+ .topbar{background:#050307}
+ .hero{height:610px;min-height:560px}
+ .hero-image{background-position:58% center}
+ .hero-vignette{background:linear-gradient(0deg,#050307 0%,#050307e8 18%,#05030755 65%,#05030720 100%)}
+ .hero h1{font-size:clamp(42px,12vw,58px)}
+ .page-content{padding-left:16px;padding-right:16px}
+ .poster-row{display:flex;gap:12px}
+ .poster-card{flex:0 0 54%;scroll-snap-align:start}
+ .poster{aspect-ratio:2/3}
+ .compact-row .poster-card{flex-basis:54%}
+ .content-section{padding-top:31px}
+ .section-head h2{font-size:20px}
+}
+@media(prefers-reduced-motion:reduce){
+ *,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}
+}
