@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#100706">
+<meta name="description" content="PHOENIX — Discover cinema beyond the ordinary.">
+<title>PHOENIX — Cinema, Reimagined</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+<header class="nav glass">
+<a class="brand" href="#"><span class="brand-mark">✦</span><span>PHOENIX</span></a>
+<nav><a class="selected" href="#home">Discover</a><a href="#movies">Movies</a><a href="#series">Series</a><a href="#collections">Collections</a></nav>
+<div class="nav-actions"><button class="icon" id="searchOpen" aria-label="Search">⌕</button><button class="avatar">P</button><button class="hamburger" id="menuOpen">☰</button></div>
+</header>
+<main>
+<section class="hero" id="home">
+<div class="hero-art"></div><div class="hero-overlay"></div>
+<div class="hero-copy"><div class="eyebrow"><i></i> THE CINEMA UNIVERSE</div><p class="overline">A NEW ERA OF ENTERTAINMENT</p><h1>Stories rise.<br><em>Legends remain.</em></h1>
+<p class="intro">Discover extraordinary films and unforgettable series, curated for the moments that matter.</p>
+<div class="actions"><a class="btn btn-primary" href="#movies">Explore titles <b>↗</b></a><button class="btn btn-glass" id="heroWatch">＋ My watchlist</button></div>
+<div class="hero-note"><span>01</span><i></i><span>FEATURED PREMIERE</span></div></div>
+<div class="hero-stamp"><span>F</span><small>THE ART OF<br>STORYTELLING</small></div>
+</section>
+<section class="ticker"><span>✦</span> DISCOVER MORE <i>·</i> WATCH DIFFERENT <i>·</i> LIVE THE STORY <span>✦</span></section>
+<section class="section" id="movies"><div class="section-head"><div><p class="eyebrow">01 / HANDPICKED FOR YOU</p><h2>The latest <em>embers.</em></h2></div><a class="more" href="#trending">View collection ↗</a></div>
+<div class="poster-grid">
+<article class="poster-card"><div class="poster p1"><span class="tag">PHOENIX SELECT</span><button class="save">＋</button><div class="poster-title"><small>SCI-FI · 2024</small><b>Dune: Part Two</b></div></div><div class="poster-meta"><span>EPIC · ADVENTURE</span><b>★ 8.5</b></div></article>
+<article class="poster-card"><div class="poster p2"><button class="save">＋</button><div class="poster-title"><small>DRAMA · 2023</small><b>Oppenheimer</b></div></div><div class="poster-meta"><span>HISTORY · DRAMA</span><b>★ 8.3</b></div></article>
+<article class="poster-card"><div class="poster p3"><button class="save">＋</button><div class="poster-title"><small>THRILLER · 2019</small><b>Joker</b></div></div><div class="poster-meta"><span>CRIME · DRAMA</span><b>★ 8.1</b></div></article>
+<article class="poster-card"><div class="poster p4"><button class="save">＋</button><div class="poster-title"><small>MYSTERY · 2019</small><b>Knives Out</b></div></div><div class="poster-meta"><span>MYSTERY · CRIME</span><b>★ 7.9</b></div></article>
+</div></section>
+<section class="manifesto" id="collections"><div class="manifesto-symbol">✦</div><div><p class="eyebrow">02 / BEYOND THE SCREEN</p><h2>Not just what<br>you watch. <em>How it feels.</em></h2><p>Find your next obsession through mood-led collections, thoughtful curation and stories worth staying up for.</p><a class="btn btn-outline" href="#trending">Enter the collection ↗</a></div></section>
+<section class="section" id="series"><div class="section-head"><div><p class="eyebrow">03 / THE LONG-FORM EXPERIENCE</p><h2>One more <em>episode.</em></h2></div><a class="more" href="#trending">Explore series ↗</a></div>
+<div class="series-grid"><article class="series s1"><span>01 / THE MYSTERY</span><b>SEVERANCE</b></article><article class="series s2"><span>02 / THE PRESSURE</span><b>THE BEAR</b></article><article class="series s3"><span>03 / THE LOOP</span><b>DARK</b></article></div></section>
+<section class="section trending" id="trending"><div class="section-head"><div><p class="eyebrow">04 / IN THE SPOTLIGHT</p><h2>What's <em>burning.</em></h2></div><div class="filters"><button class="active" data-filter="all">All</button><button data-filter="movie">Movies</button><button data-filter="series">Series</button></div></div>
+<div class="trend-list"><article data-kind="movie"><span>01</span><div class="mini m1"></div><div><b>Everything Everywhere All at Once</b><small>2022 · Sci-fi / Adventure</small></div><strong>★ 7.8</strong><button class="save-line">＋</button></article><article data-kind="series"><span>02</span><div class="mini m2"></div><div><b>Breaking Bad</b><small>2008 · Crime / Drama</small></div><strong>★ 9.5</strong><button class="save-line">＋</button></article><article data-kind="movie"><span>03</span><div class="mini m3"></div><div><b>Interstellar</b><small>2014 · Sci-fi / Drama</small></div><strong>★ 8.7</strong><button class="save-line">＋</button></article></div></section>
+</main>
+<footer><a class="brand" href="#"><span class="brand-mark">✦</span><span>PHOENIX</span></a><p>CINEMA, REIMAGINED.</p><span>© 2026 PHOENIX STUDIO</span></footer>
+<div class="search-modal" id="searchModal"><button id="searchClose">×</button><p class="eyebrow">FIND YOUR NEXT STORY</p><input id="searchInput" placeholder="Search films and series…"><p class="hint" id="searchHint">Start typing to explore the preview catalogue.</p></div>
+<div class="toast" id="toast">Added to your watchlist</div><script src="script.js"></script>
+</body></html>
