@@ -1,63 +1,65 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0b0c0d">
-<meta name="description" content="PHOENIX — Discover cinema beyond the ordinary.">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#000000">
+<meta name="description" content="PHOENIX — A world of stories, beautifully told.">
 <title>PHOENIX — Cinema, Reimagined</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
-<body>
-<div class="ambient ambient-a"></div><div class="ambient ambient-b"></div>
-<div class="app-shell">
-<aside class="rail glass">
-<a class="rail-brand" href="#home" aria-label="Phoenix home"><span class="phoenix-mark">✦</span></a>
-<a class="rail-link active" href="#home" aria-label="Home">⌂</a><a class="rail-link" href="#movies" aria-label="Movies">▣</a><a class="rail-link" href="#series" aria-label="Series">▤</a><a class="rail-link" href="#watchlist" aria-label="Watchlist">♡</a><a class="rail-link" href="#trending" aria-label="Trending">↗</a>
-<div class="rail-bottom"><button class="rail-link" id="searchOpen" aria-label="Search">⌕</button><button class="rail-link" aria-label="Settings" id="settingsBtn">⚙</button></div>
-</aside>
-<div class="main-panel">
-<header class="topbar glass">
+<body class="apple-tv">
+<header class="topbar">
 <a class="wordmark" href="#home"><span class="wordmark-icon">✦</span> PHOENIX</a>
-<nav class="top-nav"><a class="active" href="#movies">Movies</a><a href="#series">TV Shows</a><a href="#anime">Anime</a><a href="#trending">Sports</a><a href="#trending">Mystery</a><a href="#trending">Sci-Fi</a></nav>
-<div class="top-actions"><button class="search-pill" id="searchTrigger"><span>⌕</span> Search titles...</button><button class="avatar" aria-label="Profile">P</button></div>
+<nav class="top-nav" aria-label="Main navigation">
+<a class="active" href="#home">Watch Now</a><a href="#originals">Originals</a><a href="#movies">Movies</a><a href="#series">TV Shows</a><a href="#anime">Anime</a><a href="#watchlist">My List</a>
+</nav>
+<div class="top-actions"><button class="search-pill" id="searchTrigger" aria-label="Search"><span>⌕</span><span class="search-label">Search</span></button><button class="avatar" aria-label="Profile">P</button><button class="settings-icon" id="settingsBtn" aria-label="Settings">⚙</button></div>
 </header>
-<main>
-<section class="content-grid" id="home">
-<aside class="side-column">
-<section class="side-card glass"><div class="side-heading"><div><small>YOUR NEXT OBSESSION</small><h3>New episodes</h3></div><span class="live-dot"></span></div>
-<article class="episode episode-one"><div class="episode-shade"></div><div class="episode-info"><span>ANIMATION · S1 E4</span><b>Cyberpunk: Edgerunners</b></div><button class="play-small" aria-label="Play Cyberpunk">▶</button></article>
-<article class="episode episode-two"><div class="episode-shade"></div><div class="episode-info"><span>SCI-FI · S1 E2</span><b>Fallout</b></div><button class="play-small" aria-label="Play Fallout">▶</button></article>
-</section>
-<section class="side-card continue-card glass" id="watchlist"><div class="side-heading"><div><small>PICK UP WHERE YOU LEFT</small><h3>Continue watching</h3></div><a href="#trending">See all</a></div>
-<div class="continue-row"><div class="tiny-poster tiny-one"></div><div class="continue-copy"><b>Interstellar</b><span>Movie · 1h 12m left</span><i><em style="width:62%"></em></i></div><button class="play-small">▶</button></div>
-<div class="continue-row"><div class="tiny-poster tiny-two"></div><div class="continue-copy"><b>Dark</b><span>Season 2 · Episode 4</span><i><em style="width:38%"></em></i></div><button class="play-small">▶</button></div>
-<div class="continue-row"><div class="tiny-poster tiny-three"></div><div class="continue-copy"><b>Attack on Titan</b><span>Season 4 · Episode 8</span><i><em style="width:76%"></em></i></div><button class="play-small">▶</button></div>
-</section>
-</aside>
-<div class="main-column">
-<section class="hero glass">
+<main id="home">
+<section class="hero" id="originals" aria-label="Featured title">
 <div class="hero-image"></div><div class="hero-vignette"></div>
-<div class="hero-content"><span class="eyebrow"><i></i> PHOENIX PREMIERE · TRENDING</span><div class="genre-pills"><span>SCI-FI</span><span>DRAMA</span><span>ADVENTURE</span></div>
-<h1>Dune: <em>Part Two</em></h1><p>Destiny is written in the sand. Experience the epic journey across Arrakis, where a new legend rises.</p>
-<div class="hero-actions"><button class="btn btn-light" id="heroWatch">▶ <span>Watch now</span></button><button class="btn btn-outline" id="heroSave">＋ <span>My list</span></button><button class="round-btn" id="heroMore" aria-label="More information">···</button></div></div>
-<div class="hero-pagination"><span class="current">01</span><i></i><span>04</span><button aria-label="Previous feature">‹</button><button aria-label="Next feature">›</button></div>
+<div class="hero-content">
+<div class="hero-brandline"><span class="phoenix-mini">✦</span> PHOENIX ORIGINAL</div>
+<div class="genre-pills"><span>FEATURED FILM</span><span>SCI-FI</span><span>2024</span></div>
+<h1>Dune: <em>Part Two</em></h1>
+<p>Beyond fear, destiny awaits. Experience the epic journey across Arrakis.</p>
+<div class="hero-actions"><button class="btn btn-light" id="heroWatch">▶ <span>Play</span></button><button class="btn btn-outline" id="heroSave">＋ <span> Add to Up Next</span></button><button class="round-btn" id="heroMore" aria-label="More information">ⓘ</button></div>
+</div>
+<div class="hero-pagination"><span class="current">01</span><i></i><span>04</span></div>
 </section>
-<section class="recommend-section" id="movies"><div class="section-head"><div><small>CURATED FOR YOUR EVENING</small><h2>You might <em>like</em></h2></div><a href="#trending">See all <span>↗</span></a></div>
-<div class="poster-row" id="anime">
+<div class="page-content">
+<section class="content-section" id="movies"><div class="section-head"><div><small>HANDPICKED FOR YOU</small><h2>Because you love great stories</h2></div><a href="#trending">See all <span>›</span></a></div>
+<div class="poster-row">
 <article class="poster-card" data-kind="movie"><div class="poster poster-dark"><span class="poster-label">SERIES</span><button class="poster-save" aria-label="Add Dark to list">＋</button><div class="poster-bottom"><small>MYSTERY · THRILLER</small><b>Dark</b></div></div></article>
 <article class="poster-card" data-kind="anime"><div class="poster poster-code"><span class="poster-label">ANIME</span><button class="poster-save" aria-label="Add Code Geass to list">＋</button><div class="poster-bottom"><small>ANIME · DRAMA</small><b>Code Geass</b></div></div></article>
 <article class="poster-card" data-kind="movie"><div class="poster poster-thor"><span class="poster-label">MOVIE</span><button class="poster-save" aria-label="Add Thor to list">＋</button><div class="poster-bottom"><small>ACTION · FANTASY</small><b>Thor: Love and Thunder</b></div></div></article>
 <article class="poster-card" data-kind="movie"><div class="poster poster-inception"><span class="poster-label">MOVIE</span><button class="poster-save" aria-label="Add Inception to list">＋</button><div class="poster-bottom"><small>SCI-FI · THRILLER</small><b>Inception</b></div></div></article>
 </div></section>
-<section class="trending-section" id="trending"><div class="section-head"><div><small>THE PHOENIX RADAR</small><h2>Trending <em>now</em></h2></div><div class="filters"><button class="active" data-filter="all">All</button><button data-filter="movie">Movies</button><button data-filter="anime">Anime</button></div></div>
-<div class="trend-grid" id="series"><article class="trend-card" data-kind="movie"><span>01</span><div class="trend-thumb thumb-one"></div><div><b>Oppenheimer</b><small>2023 · Drama / History</small></div><strong>★ 8.3</strong><button class="trend-save">＋</button></article><article class="trend-card" data-kind="anime"><span>02</span><div class="trend-thumb thumb-two"></div><div><b>Jujutsu Kaisen</b><small>2020 · Anime / Action</small></div><strong>★ 8.5</strong><button class="trend-save">＋</button></article><article class="trend-card" data-kind="movie"><span>03</span><div class="trend-thumb thumb-three"></div><div><b>Interstellar</b><small>2014 · Sci-Fi / Drama</small></div><strong>★ 8.7</strong><button class="trend-save">＋</button></article></div>
-</section>
+<section class="content-section" id="series"><div class="section-head"><div><small>KEEP THE STORY GOING</small><h2>Continue watching</h2></div><a href="#watchlist">Your library <span>›</span></a></div>
+<div class="continue-row">
+<article class="continue-card"><div class="continue-art continue-one"></div><div class="continue-copy"><b>Interstellar</b><span>Movie · 1h 12m left</span><i><em style="width:62%"></em></i></div></article>
+<article class="continue-card"><div class="continue-art continue-two"></div><div class="continue-copy"><b>Dark</b><span>Season 2 · Episode 4</span><i><em style="width:38%"></em></i></div></article>
+<article class="continue-card"><div class="continue-art continue-three"></div><div class="continue-copy"><b>Attack on Titan</b><span>Season 4 · Episode 8</span><i><em style="width:76%"></em></i></div></article>
 </div></section>
+<section class="content-section" id="anime"><div class="section-head"><div><small>EXPLORE SOMETHING NEW</small><h2>Anime worth your time</h2></div><a href="#trending">Browse all <span>›</span></a></div>
+<div class="poster-row compact-row">
+<article class="poster-card" data-kind="anime"><div class="poster poster-code"><span class="poster-label">ANIME</span><button class="poster-save" aria-label="Add Code Geass to list">＋</button><div class="poster-bottom"><small>ANIME · DRAMA</small><b>Code Geass</b></div></div></article>
+<article class="poster-card" data-kind="anime"><div class="poster poster-dark"><span class="poster-label">ANIME</span><button class="poster-save" aria-label="Add Cyberpunk to list">＋</button><div class="poster-bottom"><small>SCI-FI · ACTION</small><b>Edgerunners</b></div></div></article>
+<article class="poster-card" data-kind="anime"><div class="poster poster-inception"><span class="poster-label">ANIME</span><button class="poster-save" aria-label="Add anime title to list">＋</button><div class="poster-bottom"><small>ADVENTURE</small><b>Discover more</b></div></div></article>
+</div></section>
+<section class="content-section" id="trending"><div class="section-head"><div><small>THE PHOENIX COLLECTION</small><h2>Trending now</h2></div><div class="filters"><button class="active" data-filter="all">All</button><button data-filter="movie">Movies</button><button data-filter="anime">Anime</button></div></div>
+<div class="trend-grid">
+<article class="trend-card" data-kind="movie"><span>01</span><div class="trend-thumb thumb-one"></div><div><b>Oppenheimer</b><small>2023 · Drama / History</small></div><strong>★ 8.3</strong><button class="trend-save">＋</button></article>
+<article class="trend-card" data-kind="anime"><span>02</span><div class="trend-thumb thumb-two"></div><div><b>Jujutsu Kaisen</b><small>2020 · Anime / Action</small></div><strong>★ 8.5</strong><button class="trend-save">＋</button></article>
+<article class="trend-card" data-kind="movie"><span>03</span><div class="trend-thumb thumb-three"></div><div><b>Interstellar</b><small>2014 · Sci-Fi / Drama</small></div><strong>★ 8.7</strong><button class="trend-save">＋</button></article>
+</div></section>
+<section class="content-section" id="watchlist"><div class="section-head"><div><small>YOUR PERSONAL COLLECTION</small><h2>My List</h2></div><span class="list-count" id="savedCount">0 titles</span></div><p class="list-note">Keep the films and series you want to come back to.</p></section>
+</div>
 </main>
-<footer><a class="wordmark" href="#home"><span class="wordmark-icon">✦</span> PHOENIX</a><span>THE ART OF STORYTELLING</span><span>© 2026 PHOENIX</span></footer>
-</div></div>
-<div class="search-modal" id="searchModal"><button class="modal-close" id="searchClose" aria-label="Close search">×</button><small>SEARCH THE PHOENIX UNIVERSE</small><input id="searchInput" placeholder="What are you in the mood for?" autocomplete="off"><p id="searchHint">Search across your cinema universe.</p></div>
-<div class="settings-backdrop" id="settingsModal" aria-hidden="true"><section class="settings-panel" role="dialog" aria-modal="true" aria-labelledby="settingsTitle"><div class="settings-head"><div><small>PERSONALISE YOUR EXPERIENCE</small><h2 id="settingsTitle">Settings</h2></div><button class="settings-close" id="settingsClose" aria-label="Close settings">×</button></div><div class="settings-group"><h3>Appearance</h3><label class="setting-row"><span><b>Theme</b><small>Choose your interface brightness</small></span><select id="themeSetting"><option value="dark">Midnight</option><option value="dim">Smoked charcoal</option></select></label><label class="setting-row"><span><b>Accent colour</b><small>Choose your PHOENIX highlight</small></span><select id="accentSetting"><option value="ember">Ember gold</option><option value="crimson">Crimson</option><option value="ice">Ice blue</option></select></label></div><div class="settings-group"><h3>Performance</h3><label class="setting-row"><span><b>Reduce animations</b><small>Improve smoothness on slower devices</small></span><input type="checkbox" id="motionSetting"></label><label class="setting-row"><span><b>Lightweight effects</b><small>Reduce blur and heavy shadows</small></span><input type="checkbox" id="effectsSetting"></label></div><div class="settings-group"><h3>Your data</h3><div class="setting-row"><span><b>Saved titles</b><small id="savedCount">0 titles in My List</small></span><button class="text-button" id="clearSaved">Clear list</button></div></div><div class="settings-footer"><button class="settings-reset" id="resetSettings">Reset settings</button><button class="settings-done" id="settingsDone">Done</button></div></section></div>\n<div class="toast" id="toast" role="status">Added to your list</div>
+<footer><a class="wordmark" href="#home"><span class="wordmark-icon">✦</span> PHOENIX</a><span>Stories stay with you.</span><span>© 2026 PHOENIX</span></footer>
+<div class="search-modal" id="searchModal"><button class="modal-close" id="searchClose" aria-label="Close search">×</button><small>SEARCH PHOENIX</small><input id="searchInput" placeholder="Films, series, genres..." autocomplete="off"><p id="searchHint">Find your next favourite story.</p></div>
+<div class="settings-backdrop" id="settingsModal" aria-hidden="true"><section class="settings-panel" role="dialog" aria-modal="true" aria-labelledby="settingsTitle"><div class="settings-head"><div><small>MAKE PHOENIX YOURS</small><h2 id="settingsTitle">Settings</h2></div><button class="settings-close" id="settingsClose" aria-label="Close settings">×</button></div><div class="settings-group"><h3>Appearance</h3><label class="setting-row"><span><b>Theme</b><small>Choose your interface brightness</small></span><select id="themeSetting"><option value="dark">Midnight</option><option value="dim">Smoked charcoal</option></select></label><label class="setting-row"><span><b>Accent colour</b><small>Choose your PHOENIX highlight</small></span><select id="accentSetting"><option value="ember">Ember gold</option><option value="crimson">Crimson</option><option value="ice">Ice blue</option></select></label></div><div class="settings-group"><h3>Performance</h3><label class="setting-row"><span><b>Reduce animations</b><small>Improve smoothness on slower devices</small></span><input type="checkbox" id="motionSetting"></label><label class="setting-row"><span><b>Lightweight effects</b><small>Keep the interface fast</small></span><input type="checkbox" id="effectsSetting"></label></div><div class="settings-group"><h3>Your data</h3><div class="setting-row"><span><b>Saved titles</b><small id="savedCountSettings">0 titles in My List</small></span><button class="text-button" id="clearSaved">Clear list</button></div></div><div class="settings-footer"><button class="settings-reset" id="resetSettings">Reset settings</button><button class="settings-done" id="settingsDone">Done</button></div></section></div>
+<div class="toast" id="toast" role="status">Added to your list</div>
 <script src="script.js"></script>
 </body></html>
