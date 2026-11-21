@@ -59,7 +59,80 @@
 </main>
 <footer><a class="wordmark" href="#home"><span class="wordmark-icon">✦</span> PHOENIX</a><span>Stories stay with you.</span><span>© 2026 PHOENIX</span></footer>
 <div class="search-modal" id="searchModal"><button class="modal-close" id="searchClose" aria-label="Close search">×</button><small>SEARCH PHOENIX</small><input id="searchInput" placeholder="Films, series, genres..." autocomplete="off"><p id="searchHint">Find your next favourite story.</p></div>
-<div class="settings-backdrop" id="settingsModal" aria-hidden="true"><section class="settings-panel" role="dialog" aria-modal="true" aria-labelledby="settingsTitle"><div class="settings-head"><div><small>MAKE PHOENIX YOURS</small><h2 id="settingsTitle">Settings</h2></div><button class="settings-close" id="settingsClose" aria-label="Close settings">×</button></div><div class="settings-group"><h3>Appearance</h3><label class="setting-row"><span><b>Theme</b><small>Choose your interface brightness</small></span><select id="themeSetting"><option value="dark">Midnight</option><option value="dim">Smoked charcoal</option></select></label><label class="setting-row"><span><b>Accent colour</b><small>Choose your PHOENIX highlight</small></span><select id="accentSetting"><option value="ember">Ember gold</option><option value="crimson">Crimson</option><option value="ice">Ice blue</option></select></label></div><div class="settings-group"><h3>Performance</h3><label class="setting-row"><span><b>Reduce animations</b><small>Improve smoothness on slower devices</small></span><input type="checkbox" id="motionSetting"></label><label class="setting-row"><span><b>Lightweight effects</b><small>Keep the interface fast</small></span><input type="checkbox" id="effectsSetting"></label></div><div class="settings-group"><h3>Your data</h3><div class="setting-row"><span><b>Saved titles</b><small id="savedCountSettings">0 titles in My List</small></span><button class="text-button" id="clearSaved">Clear list</button></div></div><div class="settings-footer"><button class="settings-reset" id="resetSettings">Reset settings</button><button class="settings-done" id="settingsDone">Done</button></div></section></div>
+<div class="settings-backdrop" id="settingsModal" aria-hidden="true">
+<section class="settings-panel settings-wide" role="dialog" aria-modal="true" aria-labelledby="settingsTitle">
+ <div class="settings-head"><div><small>PHOENIX CONTROL CENTRE</small><h2 id="settingsTitle">Settings</h2><p>Personalise your cinema experience.</p></div><button class="settings-close" id="settingsClose" aria-label="Close settings">×</button></div>
+ <div class="settings-layout">
+  <nav class="settings-nav" aria-label="Settings categories">
+   <button class="settings-tab active" data-settings-tab="general">◉ <span>General</span></button>
+   <button class="settings-tab" data-settings-tab="playback">▶ <span>Playback</span></button>
+   <button class="settings-tab" data-settings-tab="subtitles">▤ <span>Subtitles & Audio</span></button>
+   <button class="settings-tab" data-settings-tab="notifications">♧ <span>Notifications</span></button>
+   <button class="settings-tab" data-settings-tab="privacy">⌑ <span>Privacy & Data</span></button>
+   <button class="settings-tab" data-settings-tab="about">ⓘ <span>About PHOENIX</span></button>
+  </nav>
+  <div class="settings-pages">
+   <section class="settings-page active" data-settings-page="general">
+    <div class="settings-group"><h3>Appearance</h3>
+     <label class="setting-row"><span><b>Interface theme</b><small>Choose how PHOENIX looks</small></span><select id="themeSetting"><option value="dark">Midnight black</option><option value="dim">Smoked charcoal</option></select></label>
+     <label class="setting-row"><span><b>Accent colour</b><small>Personalise highlights</small></span><select id="accentSetting"><option value="ember">Antique gold</option><option value="crimson">Phoenix red</option><option value="ice">Ice blue</option></select></label>
+     <label class="setting-row"><span><b>Compact content rows</b><small>Fit more titles on screen</small></span><input type="checkbox" id="compactSetting"></label>
+    </div>
+    <div class="settings-group"><h3>Experience</h3>
+     <label class="setting-row"><span><b>Reduce animations</b><small>Prefer instant transitions</small></span><input type="checkbox" id="motionSetting"></label>
+     <label class="setting-row"><span><b>Lightweight mode</b><small>Prioritise smooth performance</small></span><input type="checkbox" id="effectsSetting"></label>
+     <label class="setting-row"><span><b>Remember my last section</b><small>Return to the last area you visited</small></span><input type="checkbox" id="rememberSetting"></label>
+    </div>
+   </section>
+   <section class="settings-page" data-settings-page="playback">
+    <div class="settings-group"><h3>Video quality</h3>
+     <label class="setting-row"><span><b>Default streaming quality</b><small>Preference for compatible players</small></span><select id="qualitySetting"><option value="auto">Auto (recommended)</option><option value="2160">4K Ultra HD</option><option value="1080">Full HD · 1080p</option><option value="720">HD · 720p</option><option value="480">SD · 480p</option></select></label>
+     <label class="setting-row"><span><b>Data saver</b><small>Prefer lower bandwidth streams</small></span><input type="checkbox" id="dataSaverSetting"></label>
+    </div>
+    <div class="settings-group"><h3>Playback behaviour</h3>
+     <label class="setting-row"><span><b>Autoplay next episode</b><small>Continue to the next episode</small></span><input type="checkbox" id="autoplaySetting"></label>
+     <label class="setting-row"><span><b>Autoplay previews</b><small>Play previews while browsing</small></span><input type="checkbox" id="previewSetting"></label>
+     <label class="setting-row"><span><b>Skip intro when available</b><small>Use skip-intro controls in supported players</small></span><input type="checkbox" id="skipIntroSetting"></label>
+    </div>
+    <p class="settings-note">Playback preferences are saved locally. They take effect when a compatible player is connected.</p>
+   </section>
+   <section class="settings-page" data-settings-page="subtitles">
+    <div class="settings-group"><h3>Subtitles</h3>
+     <label class="setting-row"><span><b>Subtitle language</b><small>Your preferred subtitle language</small></span><select id="subtitleLanguageSetting"><option value="en">English</option><option value="te">Telugu</option><option value="hi">Hindi</option><option value="ta">Tamil</option><option value="ja">Japanese</option><option value="off">Off</option></select></label>
+     <label class="setting-row"><span><b>Subtitle size</b><small>Text size in the player</small></span><select id="subtitleSizeSetting"><option value="small">Small</option><option value="medium">Medium</option><option value="large">Large</option><option value="xlarge">Extra large</option></select></label>
+     <label class="setting-row"><span><b>Subtitle background</b><small>Improve readability</small></span><select id="subtitleBackgroundSetting"><option value="dark">Dark translucent</option><option value="none">None</option><option value="solid">Solid black</option></select></label>
+    </div>
+    <div class="settings-group"><h3>Audio</h3>
+     <label class="setting-row"><span><b>Preferred audio language</b><small>Default audio track</small></span><select id="audioLanguageSetting"><option value="original">Original language</option><option value="en">English</option><option value="te">Telugu</option><option value="hi">Hindi</option><option value="ta">Tamil</option></select></label>
+     <label class="setting-row"><span><b>Remember audio and subtitle choices</b><small>Keep your selections per title</small></span><input type="checkbox" id="rememberTracksSetting"></label>
+    </div>
+    <p class="settings-note">These are saved preferences; subtitle and audio controls require player integration.</p>
+   </section>
+   <section class="settings-page" data-settings-page="notifications">
+    <div class="settings-group"><h3>What you hear about</h3>
+     <label class="setting-row"><span><b>New episodes</b><small>When followed shows get new episodes</small></span><input type="checkbox" id="newEpisodesSetting"></label>
+     <label class="setting-row"><span><b>New movie releases</b><small>New additions to the catalogue</small></span><input type="checkbox" id="newMoviesSetting"></label>
+     <label class="setting-row"><span><b>Continue watching reminders</b><small>Reminders for unfinished titles</small></span><input type="checkbox" id="remindersSetting"></label>
+     <label class="setting-row"><span><b>Product updates</b><small>New PHOENIX features and improvements</small></span><input type="checkbox" id="productUpdatesSetting"></label>
+    </div>
+    <p class="settings-note">Notification preferences are stored here. Push notifications are not connected yet.</p>
+   </section>
+   <section class="settings-page" data-settings-page="privacy">
+    <div class="settings-group"><h3>Your PHOENIX data</h3>
+     <div class="setting-row"><span><b>Saved titles</b><small id="savedCountSettings">0 titles in My List</small></span><button class="text-button" id="clearSaved">Clear My List</button></div>
+     <div class="setting-row"><span><b>Saved preferences</b><small>Theme, playback and language preferences on this device</small></span><button class="text-button" id="resetSettings">Reset preferences</button></div>
+     <div class="setting-row"><span><b>Search history</b><small>Search is not stored by this preview</small></span><span class="setting-status">Not stored</span></div>
+    </div>
+    <div class="settings-group"><h3>Storage</h3><p class="settings-note">Your My List and settings are stored in this browser on this device. Clearing browser site data may remove them.</p></div>
+   </section>
+   <section class="settings-page" data-settings-page="about">
+    <div class="about-brand"><span>✦</span><div><b>PHOENIX</b><small>CINEMA, REIMAGINED</small></div></div>
+    <div class="settings-group"><h3>Application</h3><div class="setting-row"><span><b>Version</b><small>Web preview</small></span><span class="setting-status">2026.1</span></div><div class="setting-row"><span><b>Interface</b><small>Apple TV inspired · Solid surfaces</small></span><span class="setting-status">Mobile ready</span></div><div class="setting-row"><span><b>Streaming player</b><small>Integration status</small></span><span class="setting-status">Not connected</span></div></div>
+   </section>
+  </div>
+ </div>
+ <div class="settings-footer"><button class="settings-reset" id="resetSettingsFooter">Reset all preferences</button><button class="settings-done" id="settingsDone">Done</button></div>
+</section></div>
 <div class="toast" id="toast" role="status">Added to your list</div>
 <script src="script.js"></script>
 </body></html>
